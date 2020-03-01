@@ -41,7 +41,7 @@ var path = require('path');
 var http = require('http');
 var fs = require('fs');
 var route = require('./routes/route');
-
+const PORT = process.env.PORT || 5000;
 
 var app = express();
 var server = http.createServer(app);
@@ -81,7 +81,7 @@ app.get('/tasks', function (req, res) {
     });
 });
 
-server.listen(3000, function () {
+server.listen(PORT, function () {
     console.log('server listeneing');
 
 });
