@@ -74,16 +74,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 //add routes 
 // app.use('/api', route);
 
-// app.get('/', function (req, res) {
-//     res.send('<h2>Express is working</h2>');
-// });
+app.get('/', function (req, res) {
+    res.send('<h2>Express is working</h2>');
+});
 
-// app.get('/tasks', function (req, res) {
-//     fs.readFile('./db.json', function (err, data) {
-//         res.json(JSON.parse(data.toString()).tasks);
+app.get('/tasks', function (req, res) {
+    fs.readFile('./db.json', function (err, data) {
+        res.json(JSON.parse(data.toString()).tasks);
 
-//     });
-// });
+    });
+});
 
 server.listen(PORT, function () {
     console.log('server listeneing');
