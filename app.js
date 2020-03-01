@@ -50,20 +50,20 @@ var server = http.createServer(app);
 app.use(cors());
 
 //connect to mongodb
-var uristring =
-    process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
-    'mongodb://localhost/HelloMongoose';
-mangoose.connect('mongodb://localhost:27017/postlist');
-mangoose.connection.on('connected', function (err) {
-    if (!err) {
-        console.log('connected to mangodb successfully');
+// var uristring =
+//     process.env.MONGOLAB_URI ||
+//     process.env.MONGOHQ_URL ||
+//     'mongodb://localhost/HelloMongoose';
+// mangoose.connect('mongodb://localhost:27017/postlist');
+// mangoose.connection.on('connected', function (err) {
+//     if (!err) {
+//         console.log('connected to mangodb successfully');
 
-    } else {
-        console.log('error connection with mangodb ' + err);
+//     } else {
+//         console.log('error connection with mangodb ' + err);
 
-    }
-});
+//     }
+// });
 
 //body-parser
 app.use(bodyparser.json());
@@ -72,7 +72,7 @@ app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //add routes 
-app.use('/api', route);
+// app.use('/api', route);
 
 app.get('/', function (req, res) {
     res.send('<h2>Express is working</h2>');
