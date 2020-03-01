@@ -50,6 +50,10 @@ var server = http.createServer(app);
 app.use(cors());
 
 //connect to mongodb
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/HelloMongoose';
 mangoose.connect('mongodb://localhost:27017/postlist');
 mangoose.connection.on('connected', function (err) {
     if (!err) {
